@@ -2,7 +2,7 @@
    const IMAGEPATH = '../assets/images/';
    let context;  
    let canvas; 
-     
+
    //GRID
    const GRIDSPACING   = 100;
    const GRIDLINEWIDTH = 1;
@@ -13,6 +13,14 @@
    let sideImage = new Image();
        sideImage.src = IMAGEPATH+'barracanvasgreen.png';
    let sideImageBrand = new CanvasImage(sideImage.width,sideImage.height,0,0);
+
+
+  //TEXT
+   const TEXTCOLOR = 'lime';
+   const WIREFRAMETEXT = true;
+   let textTitle = new CanvasText('DOM TRADING 2025',200,150,100,!WIREFRAMETEXT);
+   let textTitleWireframe = new CanvasText('DOM TRADING 2025',200,150,100,WIREFRAMETEXT);
+
 
    //CANDLE
    const CANDLEWIDTH  = 100; //pixels
@@ -52,7 +60,11 @@
         canvas.clearRect(0,0,1920,1080);
         gride.draw(canvas);
         sideImageBrand.draw(canvas,sideImage);
-
+        textTitle.changeColor('lime','white');
+        textTitle.draw(canvas);
+        textTitleWireframe.draw(canvas);
+      
+        
         //CANDLE 1 - SÓLIDO
         candle1.changeColor('UP');
         candle1.draw(canvas);

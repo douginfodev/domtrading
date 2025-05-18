@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
   border: 0;
   padding: 0;
@@ -19,6 +21,7 @@
   --image-bck-containers1: url('../images/bckcontainers1_green.png');
 
   font-size: 62.5%;
+  font-family: 'Roboto', sans-serif;
 }
 
 .wrapper {
@@ -56,7 +59,7 @@ ol{
 }
 
 ol li {
-   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode'; 
+   /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';  */
   font-size: 2.1rem;
   font-weight: 700;
   color: #7bfcac;  
