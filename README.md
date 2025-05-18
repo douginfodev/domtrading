@@ -1,9 +1,16 @@
 # DOMTRADING - CHALLENGE 2025
 
-## 0 - SOBRE
+<div>
+<figure>
+ <img src="assets/images/capadomtrading.jpg" alt="Capa DOMTRADING 2025">
+ <figcaption>Capa DOMTRADING 2025</figcaption> 
+</figure>
+</div>
+
+## SOBRE
 DOMTRADING CHALLENGE - Desenvolver os famosos Gráficos de Candle(Velas), muito utilizados em Sistemas do Mercado Financeiro, utilizando o Elemento <canvas> do HTML 5.  
 
-## 0 - TECNOLOGIAS UTILIZADAS
+## TECNOLOGIAS UTILIZADAS
 - HTML 5
 - CSS
 - Javascript
