@@ -1,4 +1,4 @@
-const CanvasText = function (text, positionX, positionY, height, wireframe) {
+const CanvasText = function (positionX, positionY,text,height, wireframe) {
         this.text = text,
         this.originX = positionX,
         this.originY = positionY,

@@ -18,8 +18,8 @@
   //TEXT
    const TEXTCOLOR = 'lime';
    const WIREFRAMETEXT = true;
-   let textTitle = new CanvasText('DOM TRADING 2025',200,150,100,!WIREFRAMETEXT);
-   let textTitleWireframe = new CanvasText('DOM TRADING 2025',200,150,100,WIREFRAMETEXT);
+   let textTitle = new CanvasText(300,80,'DOM TRADING 2025',80,!WIREFRAMETEXT);
+   let textTitleWireframe = new CanvasText(300,80,'DOM TRADING 2025',80,WIREFRAMETEXT);
 
 
    //CANDLE
@@ -60,7 +60,7 @@
         canvas.clearRect(0,0,1920,1080);
         gride.draw(canvas);
         sideImageBrand.draw(canvas,sideImage);
-        textTitle.changeColor('lime','white');
+        textTitle.changeColor(TEXTCOLOR,'white');
         textTitle.draw(canvas);
         textTitleWireframe.draw(canvas);
       
