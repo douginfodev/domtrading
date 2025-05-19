@@ -37,10 +37,10 @@ Grid.prototype.draw = function (canvas) {
   //Screen Center
   //HORIZONTAL
   canvas.strokeStyle = 'yellow';
-  canvas.lineWidth = 3;
+  canvas.lineWidth = 5;
   canvas.beginPath();
   canvas.moveTo(700,0);
-  canvas.lineTo(700,1000);
+  canvas.lineTo(540,1000);
   canvas.stroke();
 
   //VERTICAL

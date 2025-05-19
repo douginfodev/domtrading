@@ -6,7 +6,7 @@ const CanvasText = function (positionX, positionY,text,height, wireframe) {
         this.font    = this.height+"px bold Roboto, sans-serif",
         this.color   = 'lime',
         this.strokeColor = 'white',
-        this.Length  = 0,
+        this.length  = 0,
         this.textWidth = 2,
         this.wireframe = wireframe
 };
@@ -18,7 +18,7 @@ CanvasText.prototype.changeColor = function (color,strokecolor) {
 };
 
 CanvasText.prototype.getLength = function () {
-  return this.Length;
+  return this.length;
 };
 
 CanvasText.prototype.setLength = function (length) {

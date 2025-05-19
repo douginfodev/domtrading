@@ -39,6 +39,8 @@
 
         if (context !== null) {
             canvas = context.getContext('2d');
+            canvasDisplay();
+            //screenSize(canvas);
             start();
         } else
             alert('Element Canvas not Found');
@@ -88,4 +90,26 @@
         draw();
         requestAnimationFrame(loop, context);
     }
+
+    //SCREEN / CANVAS SIZE
+    function screenSize(canvas){
+      let  screenWidth   = context.offsetWidth;
+      let  screenHeight  = context.offsetHeight;
+      //let  screenCenterX = (Math.ceil(canvasResolutionWidth  / 2));
+      //let  screenCenterY = (Math.ceil(canvasResolutionHeight / 2));
+      alert(screenWidth+','+screenHeight);
+  
+      return [screenWidth,screenHeight]
+    }
+
+    //SCREEN / CANVAS SIZE
+    function canvasDisplay(){
+      let  canvasResolutionWidth   = context.width;
+      let  canvasResolutionHeight  = context.height;
+      //let  screenCenterX = (Math.ceil(canvasResolutionWidth  / 2));
+      //let  screenCenterY = (Math.ceil(canvasResolutionHeight / 2));
+      alert(canvasResolutionWidth +','+canvasResolutionHeight);
+   
+      return [canvasResolutionWidth,canvasResolutionWidth];
+   }
 }());
