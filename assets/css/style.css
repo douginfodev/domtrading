@@ -67,6 +67,7 @@ ol li {
 }
 
 main {
+  margin: 0 auto;
   display: flex;
   width: 99%;
   height: inherit;
@@ -196,8 +197,8 @@ padding: 2px;
 
     .wrapper {
       display: flex;
-      justify-content: center;
-      align-items: center;
+      justify-content: start;
+      align-items: start;
       width: 100%;
       height: 100vh;
       margin: 0 auto;

@@ -14,23 +14,21 @@
 
    //LOADING SIDEIMAGE PROF DOM
    let sideImage      = new Image();
-       sideImage.src  = IMAGEPATH+'barracanvasgreen.png';
+       sideImage.src  = IMAGEPATH+'exemplo1.png';
    let sideImageBrand = new CanvasImage(sideImage.width,sideImage.height,0,0);
 
   //TEXT
-   const TEXTCOLOR     = 'lime';
+   const TEXTCOLOR     = 'white';
    const WIREFRAMETEXT = true;
-   let textTitle = new CanvasText(300,80,'DOM TRADING 2025',80,!WIREFRAMETEXT);
+   let textTitle = new CanvasText(550,80,'EXEMPLO 1',60,!WIREFRAMETEXT);
    let textTitleWireframe = new CanvasText(300,80,'DOM TRADING 2025',80,WIREFRAMETEXT);
 
    //CANDLE
    const CANDLEWIDTH  = 100; //pixels
    const CANDLEHEIGHT = 400; //pixels
    let wireframe      = false;
-   let candle1        = new Candle(300,200,CANDLEWIDTH,CANDLEHEIGHT,wireframe); 
-   let candle2        = new Candle(800,200,CANDLEWIDTH,CANDLEHEIGHT,wireframe); 
-   let candleStickWireframe1 = new Candle(500,200,CANDLEWIDTH,CANDLEHEIGHT,!wireframe); 
-   let candleStickWireframe2 = new Candle(1000,200,CANDLEWIDTH,CANDLEHEIGHT,!wireframe); 
+   let candle1        = new Candle(500,200,CANDLEWIDTH,CANDLEHEIGHT,wireframe); 
+   let candleStickWireframe1 = new Candle(800,200,CANDLEWIDTH,CANDLEHEIGHT,!wireframe); 
  
     window.onload = init();   
    
@@ -59,10 +57,10 @@
     function draw() {
         canvas.clearRect(0,0,1920,1080);
         gride.draw(canvas);
-        sideImageBrand.draw(canvas,sideImage);
         textTitle.changeColor(TEXTCOLOR,'white');
         textTitle.draw(canvas);
-        textTitleWireframe.draw(canvas);
+        sideImageBrand.draw(canvas,sideImage);
+     
       
         //CANDLE 1 - SÓLIDO
         candle1.changeColor('UP');
@@ -71,14 +69,6 @@
         //CANDLE STICK 1 - WIREFRAME
         candleStickWireframe1.draw(canvas);
         candleStickWireframe1.stick(canvas);
-
-        //CANDLE 2 - SÓLIDO
-        candle2.changeColor('DOWN');
-        candle2.draw(canvas);
-        
-        //CANDLE STICK 2 - WIREFRAME
-        candleStickWireframe2.draw(canvas);
-        candleStickWireframe2.stick(canvas);
     }
 
     function loop() {

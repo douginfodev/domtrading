@@ -7,7 +7,7 @@ function Candle(positionX, positionY, width, height,wireframe) {
     this.height    = height,
     this.width     = width,
     this.color       = 'yellow',  //NAME COLOR
-    this.strokeColor = 'white',
+    this.strokeColor = 'yellow',
     this.lineWidth   = 6,
     this.wireframe   = wireframe,
     //STICK PROPERTIES
