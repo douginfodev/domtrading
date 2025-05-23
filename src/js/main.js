@@ -5,7 +5,7 @@
 
    //GRID
    const GRIDSPACINGROW    = 100;
-   const GRIDSPACINGCOLUMN = 100;
+   const GRIDSPACINGCOLUMN = 50;
    const GRIDLINEWIDTH = 1;
    const GRIDCOLOR     = 'white';
    let   gridWidht     =  1900;
@@ -14,22 +14,42 @@
 
    //LOADING SIDEIMAGE PROF DOM
    let sideImage      = new Image();
-       sideImage.src  = IMAGEPATH+'exemplo1.png';
+       sideImage.src  = IMAGEPATH+'exemplo5.png';
    let sideImageBrand = new CanvasImage(sideImage.width,sideImage.height,0,0);
 
   //TEXT
    const TEXTCOLOR     = 'white';
    const WIREFRAMETEXT = true;
-   let textTitle = new CanvasText(550,80,'EXEMPLO 1',60,!WIREFRAMETEXT);
+   let textTitle = new CanvasText(550,80,'EXEMPLO 5',60,!WIREFRAMETEXT);
    let textTitleWireframe = new CanvasText(300,80,'DOM TRADING 2025',80,WIREFRAMETEXT);
 
    //CANDLE
    const CANDLEWIDTH  = 100; //pixels
-   const CANDLEHEIGHT = 400; //pixels
+   const CANDLEHEIGHT = 400; //pixels 100 STICK HIGH / 100 STICK LOW
+   const ISVISIBLE    = true;
    let wireframe      = false;
-   let candle1        = new Candle(500,200,CANDLEWIDTH,CANDLEHEIGHT,wireframe); 
-   let candleStickWireframe1 = new Candle(800,200,CANDLEWIDTH,CANDLEHEIGHT,!wireframe); 
+
+   //CANDLESTICK HIGH / LOW
+   let candleHigh     = new Candle(500,200,CANDLEWIDTH,CANDLEHEIGHT,wireframe); 
+   let candleLow      = new Candle(800,200,CANDLEWIDTH,CANDLEHEIGHT,wireframe); 
  
+   //CANDLESTICK HAMMER - MARTELO
+   let candlestickHammer      = new Candle(500,150,CANDLEWIDTH,150,wireframe); 
+   let candlestickHammerWire  = new Candle(800,150,CANDLEWIDTH,150,!wireframe); 
+ 
+   //CANDLESTICK SPINNING TOP - PIÃO
+   let candlestickSpinningTopHigh  = new Candle(500,350,CANDLEWIDTH,100,wireframe); 
+   let candlestickSpinningTopLow   = new Candle(800,350,CANDLEWIDTH,100,wireframe); 
+ 
+   //CANDLESTICK STAR - ESTRELA CADENTE
+   let candlestickStarLow      = new Candle(500,500,CANDLEWIDTH,150,wireframe); 
+   let candlestickStarLowWire  = new Candle(800,500,CANDLEWIDTH,150,!wireframe); 
+ 
+   //CANDLESTICK DOJI 
+   let candlestickDojiHigh   = new Candle(500,200,CANDLEWIDTH,25,wireframe); 
+   let candlestickDojiLow    = new Candle(800,550,CANDLEWIDTH,25,!wireframe); 
+ 
+
     window.onload = init();   
    
     function init() {
@@ -60,15 +80,66 @@
         textTitle.changeColor(TEXTCOLOR,'white');
         textTitle.draw(canvas);
         sideImageBrand.draw(canvas,sideImage);
-     
-      
-        //CANDLE 1 - SÓLIDO
-        candle1.changeColor('UP');
-        candle1.draw(canvas);
 
-        //CANDLE STICK 1 - WIREFRAME
-        candleStickWireframe1.draw(canvas);
-        candleStickWireframe1.stick(canvas);
+        //EX 5 - CANDLESTICK DOJI - SÓLIDO
+        candlestickDojiHigh.Visible(ISVISIBLE);
+        candlestickDojiHigh.stick(canvas);
+        candlestickDojiHigh.draw(canvas);
+        candlestickDojiHigh.changeColor('DEFAULT');                      
+
+        //EX 5 - CANDLESTICK DOJI (ESTRELA CADENTE) - WIREFRAME
+        candlestickDojiLow.Visible(ISVISIBLE);
+        candlestickDojiLow.draw(canvas);
+        candlestickDojiLow.stick(canvas);
+        candlestickDojiLow.changeColor('DEFAULT'); 
+
+        //EX 4 - CANDLESTICK STAR (ESTRELA CADENTE) - SÓLIDO
+        candlestickStarLow.Visible(!ISVISIBLE);
+        candlestickStarLow.stick(canvas);
+        candlestickStarLow.draw(canvas);
+        candlestickStarLow.changeColor('DOWN');                      
+
+        //EX 4 - CANDLESTICK STAR (ESTRELA CADENTE) - WIREFRAME
+        candlestickStarLowWire .Visible(!ISVISIBLE);
+        candlestickStarLowWire .draw(canvas);
+        candlestickStarLowWire .stick(canvas);
+        candlestickStarLowWire .changeColor('DOWN');      
+
+        //EX 3 - CANDLESTICK SPINNING TOP(PIÃO) - SÓLIDO
+        candlestickSpinningTopHigh.Visible(!ISVISIBLE);
+        candlestickSpinningTopHigh.stick(canvas);
+        candlestickSpinningTopHigh.draw(canvas);
+        candlestickSpinningTopHigh.changeColor('UP');                      
+
+        //EX 3 - CANDLESTICK SPINNIG TOP(PIÃO) - WIREFRAME
+        candlestickSpinningTopLow.Visible(!ISVISIBLE);
+        candlestickSpinningTopLow.draw(canvas);
+        candlestickSpinningTopLow.stick(canvas);
+        candlestickSpinningTopLow.changeColor('DOWN');
+      
+        //EX 2 - CANDLESTICK HAMMER(MARTELO) - SÓLIDO
+        candlestickHammer.Visible(!ISVISIBLE);
+        candlestickHammer.stick(canvas);
+        candlestickHammer.draw(canvas);
+        candlestickHammer.changeColor('UP');                      
+
+        //EX 2 - CANDLESTICK HAMMER(MARTELO) - WIREFRAME
+        candlestickHammerWire.Visible(!ISVISIBLE);
+        candlestickHammerWire.draw(canvas);
+        candlestickHammerWire.stick(canvas);
+        candlestickHammerWire.changeColor('UP');
+
+        //EX 1 -CANDLE HIGH - SÓLIDO
+        candleHigh.Visible(!ISVISIBLE);
+        candleHigh.stick(canvas);
+        candleHigh.draw(canvas);
+        candleHigh.changeColor('UP');                      
+
+        //EX 2 - CANDLESTICK LOW - WIREFRAME
+        candleLow.Visible(!ISVISIBLE);
+        candleLow.draw(canvas);
+        candleLow.stick(canvas);
+        candleLow.changeColor('DOWN');
     }
 
     function loop() {
