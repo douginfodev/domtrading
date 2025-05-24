@@ -3,8 +3,8 @@ function Trading(id, startprice, endprice, actualprice) {
 
     //CANDLE PROPERTIES
     this.Id = id,
-    this.startPrice = startprice,
-    this.endPrice = endprice,
+    this.startPrice  = startprice,
+    this.endPrice    = endprice,
     this.actualPrice = actualprice
 };
 
